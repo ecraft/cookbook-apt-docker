@@ -22,7 +22,7 @@ describe 'apt-docker' do
         context 'by default' do
           let(:chef_run) do
             ChefSpec::SoloRunner.new(platform: platform.to_s, version: version.to_s)
-              .converge(described_recipe)
+                                .converge(described_recipe)
           end
 
           it 'should create the docker-main repo with default attribs' do
@@ -132,7 +132,7 @@ describe 'apt-docker' do
   context 'when on an unsupported platform' do
     let(:chef_run) do
       ChefSpec::SoloRunner.new(platform: 'redhat', version: '7.0')
-        .converge(described_recipe)
+                          .converge(described_recipe)
     end
 
     it 'should raise an error' do
