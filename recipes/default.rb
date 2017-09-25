@@ -12,7 +12,7 @@ platform_family = node['platform_family']
 platform = node['platform']
 platform_version = node['platform_version']
 
-fail("#{platform_family}/#{platform}/#{platform_version} is not supported by the default recipe") \
+raise("#{platform_family}/#{platform}/#{platform_version} is not supported by the default recipe") \
  unless platform_family?('debian') &&
         node['apt-docker']['supported-codenames']
         .select { |_version, is_included| is_included }
